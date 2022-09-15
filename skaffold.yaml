@@ -1,0 +1,20 @@
+apiVersion: skaffold/v2beta29
+kind: Config
+metadata:
+  name: test
+#build:
+#  artifacts:
+#    - image: lab-php:v1
+#      context: dockerfiles/backend
+#      docker:
+#        dockerfile: Dockerfile
+#    - image: lab1-nginx
+#      context: dockerfiles/nginx
+#      docker:
+#        dockerfile: Dockerfile
+deploy:
+  kubectl:
+    manifests:
+    - deployment.yaml
+    - service.yaml
+    - ingress.yaml
